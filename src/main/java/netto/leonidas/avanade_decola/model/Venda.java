@@ -1,8 +1,8 @@
 package netto.leonidas.avanade_decola.model;
 
 import jakarta.persistence.*;
-
 import java.util.Set;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Vendas")
@@ -21,7 +21,7 @@ public class Venda {
     private Funcionario funcionario;
 
     @Column(name = "data_hora", nullable = false)
-    private String dataHora;
+    private LocalDateTime dataHora;
 
     @ManyToOne
     @JoinColumn(name = "id_pagamento", nullable = false)
@@ -54,11 +54,11 @@ public class Venda {
         this.funcionario = funcionario;
     }
 
-    public String getDataHora() {
+    public LocalDateTime getDataHora() {
         return dataHora;
     }
 
-    public void setDataHora(String dataHora) {
+    public void setDataHora(LocalDateTime dataHora) {
         this.dataHora = dataHora;
     }
 
