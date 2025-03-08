@@ -43,29 +43,31 @@ public class ProdutoFornecedor {
     public void setFornecedor(Fornecedor fornecedor) {
         this.fornecedor = fornecedor;
     }
+
+    @Embeddable
+    public class ProdutoFornecedorId implements Serializable {
+        @Column(name = "id_produto")
+        private int idProduto;
+
+        @Column(name = "id_fornecedor")
+        private int idFornecedor;
+
+        public int getIdProduto() {
+            return idProduto;
+        }
+
+        public void setIdProduto(int idProduto) {
+            this.idProduto = idProduto;
+        }
+
+        public int getIdFornecedor() {
+            return idFornecedor;
+        }
+
+        public void setIdFornecedor(int idFornecedor) {
+            this.idFornecedor = idFornecedor;
+        }
+    }
 }
 
-@Embeddable
-class ProdutoFornecedorId implements Serializable {
-    @Column(name = "id_produto")
-    private int idProduto;
 
-    @Column(name = "id_fornecedor")
-    private int idFornecedor;
-
-    public int getIdProduto() {
-        return idProduto;
-    }
-
-    public void setIdProduto(int idProduto) {
-        this.idProduto = idProduto;
-    }
-
-    public int getIdFornecedor() {
-        return idFornecedor;
-    }
-
-    public void setIdFornecedor(int idFornecedor) {
-        this.idFornecedor = idFornecedor;
-    }
-}
