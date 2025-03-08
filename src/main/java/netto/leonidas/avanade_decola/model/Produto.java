@@ -1,6 +1,7 @@
 package netto.leonidas.avanade_decola.model;
 
 import jakarta.persistence.*;
+import java.math.BigDecimal;
 import java.util.Set;
 
 @Entity
@@ -15,7 +16,7 @@ public class Produto {
     private String descricao;
 
     @Column(name = "preco", nullable = false, precision = 10, scale = 2)
-    private double preco;
+    private BigDecimal preco;
 
     @OneToMany(mappedBy = "produto")
     private Set<ProdutoFornecedor> produtosFornecedores;
@@ -42,11 +43,11 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public double getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 
