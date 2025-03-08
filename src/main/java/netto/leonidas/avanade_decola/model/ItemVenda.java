@@ -1,7 +1,6 @@
 package netto.leonidas.avanade_decola.model;
 
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 
 @Entity
@@ -45,8 +44,7 @@ public class ItemVenda {
     }
 
     @Embeddable
-    static
-    class ItemVendaId implements Serializable {
+    public class ItemVendaId implements Serializable {
         @Column(name = "id_venda")
         private int idVenda;
 
