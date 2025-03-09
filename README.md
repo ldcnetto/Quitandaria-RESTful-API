@@ -147,6 +147,6 @@ classDiagram
     Funcionarios "1" -- "0..*" Estoque : id_funcionario
 ```
 
-## Documentação da API (Swagger)
+## Documentação da API (Deploy com Swagger)
 
-(inclusa em breve)
+https://quitandaria-restful-api-production.up.railway.app/swagger-ui/index.html#/cliente-controller/salvarCliente
