@@ -2,6 +2,8 @@ package netto.leonidas.avanade_decola.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigInteger;
+
 @Entity
 @Table(name = "Clientes")
 public class Cliente {
@@ -9,6 +11,9 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private int id;
+
+    @Column(name = "cpf", nullable = false, length = 25)
+    private String cpf;
 
     @Column(name = "nome", nullable = false, length = 60)
     private String nome;
@@ -20,7 +25,7 @@ public class Cliente {
     private long telefone;
 
     @ManyToOne
-    @JoinColumn(name = "cep_cliente", nullable = false)
+    @JoinColumn(name = "endereco")
     private Endereco endereco;
 
     @Column(name = "n_residencial", nullable = false)
@@ -32,6 +37,14 @@ public class Cliente {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(BigInteger cpf) {
+        this.cpf = String.valueOf(cpf);
     }
 
     public String getNome() {
