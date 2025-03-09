@@ -1,7 +1,7 @@
 # Avanade Decola 2025 - RESTful API de uma Quitandaria
 
 ## Principais Tecnologias
-- Java 23: foi utilizada a versão LTS mais recente do Java;
+- Java 17: foi utilizada a versão 17 do Java, pois tem compatibilidade com o build do Maven;
 - Spring Boot 3 (3.4.3): a versão mais recente LTS do Spring Boot;
 - Spring Web
 - Spring Data JPA: facilita a integração com bancos de dados SQL;
