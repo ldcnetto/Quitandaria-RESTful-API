@@ -27,7 +27,7 @@ public class Venda {
     @JoinColumn(name = "id_pagamento", nullable = false)
     private FormaPagamento formaPagamento;
 
-    @OneToMany(mappedBy = "venda")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "venda")
     private Set<ItemVenda> itensVenda;
 
     public int getId() {

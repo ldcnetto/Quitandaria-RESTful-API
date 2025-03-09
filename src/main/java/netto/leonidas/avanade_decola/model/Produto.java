@@ -18,13 +18,13 @@ public class Produto {
     @Column(name = "preco", nullable = false, precision = 10, scale = 2)
     private BigDecimal preco;
 
-    @OneToMany(mappedBy = "produto")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "produto")
     private Set<ProdutoFornecedor> produtosFornecedores;
 
-    @OneToMany(mappedBy = "produto")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "produto")
     private Set<ItemVenda> itensVenda;
 
-    @OneToOne(mappedBy = "produto", cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "produto", cascade = CascadeType.ALL)
     private Estoque estoque;
 
     public int getId() {
