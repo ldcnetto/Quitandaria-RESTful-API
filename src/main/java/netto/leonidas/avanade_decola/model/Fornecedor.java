@@ -33,7 +33,7 @@ public class Fornecedor {
     @OneToOne(mappedBy = "fornecedor", cascade = CascadeType.ALL)
     private FornecedorPJ fornecedorPJ;
 
-    @OneToMany(mappedBy = "fornecedor")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "fornecedor")
     private Set<ProdutoFornecedor> produtosFornecedores;
 
     public int getId() {

@@ -23,16 +23,16 @@ public class Endereco {
     @Column(name = "tipo", nullable = false)
     private TipoEndereco tipo;
 
-    @OneToMany(mappedBy = "endereco")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "endereco")
     private Set<Cliente> clientes;
 
-    @OneToMany(mappedBy = "endereco")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "endereco")
     private Set<Funcionario> funcionarios;
 
-    @OneToMany(mappedBy = "endereco")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "endereco")
     private Set<Fornecedor> fornecedores;
 
-    @OneToMany(mappedBy = "endereco")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "endereco")
     private Set<Transportadora> transportadoras;
 
     // Enum para o tipo de endereço

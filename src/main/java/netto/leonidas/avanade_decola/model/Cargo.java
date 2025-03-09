@@ -14,7 +14,7 @@ public class Cargo {
     @Column(name = "descricao", nullable = false, length = 40)
     private String descricao;
 
-    @OneToMany(mappedBy = "cargo")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "cargo")
     private Set<Funcionario> funcionarios;
 
     public int getId() {

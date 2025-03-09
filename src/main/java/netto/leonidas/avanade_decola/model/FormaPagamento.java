@@ -15,7 +15,7 @@ public class FormaPagamento {
     @Column(name = "descricao", nullable = false, length = 20)
     private String descricao;
 
-    @OneToMany(mappedBy = "formaPagamento")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "formaPagamento")
     private Set<Venda> vendas;
 
     public int getId() {
